@@ -200,10 +200,10 @@ nav a:hover,nav a.on{background-size:100% 2px;color:var(--accent)}
     <div class="eyebrow rise" style="--d:.05s">Machine learning · Sales and demand analysis · AI agents</div>
     <h1 class="rise" style="--d:.15s">Chisom Goodnews Obodoekwe</h1>
     <p class="lede rise" style="--d:.28s">I build machine learning models and AI agents, and I report plainly what they can and cannot do.</p>
-    <p class="sub rise" style="--d:.4s">Data scientist with an MSc in Data Science and fintech experience on SME lending and underwriting models. Each of the six projects states its results plainly, with the metrics and the reasoning behind each decision.</p>
+    <p class="sub rise" style="--d:.4s">Data scientist with an MSc in Data Science and fintech experience on SME lending and underwriting models. Each of the seven projects states its results plainly, with the metrics and the reasoning behind each decision.</p>
   </div>
   <dl class="facts rise" style="--d:.52s">
-    <div><dt>Experience</dt><dd>Data Scientist, Lenkie Technologies (SME lending), 07/2024 – 09/2025</dd></div>
+    <div><dt>Experience</dt><dd>Data Scientist (part-time contract), Lenkie Technologies (SME lending), 07/2024 – 09/2025</dd></div>
     <div><dt>Education</dt><dd>MSc Data Science, University of Chester, completed 10/2026</dd></div>
     <div><dt>Core stack</dt><dd>Python, SQL, Azure, Docker</dd></div>
     <div><dt>Based in</dt><dd>Liverpool, UK</dd></div>
@@ -309,6 +309,34 @@ nav a:hover,nav a.on{background-size:100% 2px;color:var(--accent)}
     </div>
   </article>
 
+  <article class="case">
+    <div>
+      <h3>High-value customer prediction: what the model can and cannot show</h3>
+      <div class="tags">Python · scikit-learn · KNN imputation · Logistic Regression · pandas · SciPy</div>
+      <p>A binary classifier that flags high-value customers (spending score of 70 or more and income at or above the median) from age, income, spending score and gender, to support segmentation and targeted marketing.</p>
+      <ul>
+        <li>Cleaned 200 customer records: standardised gender labels, removed invalid income entries and filled missing age and income with KNN imputation (k = 5).</li>
+        <li>Log-transformed the skewed income and winsorised four extreme outliers at the 1st and 99th percentiles, keeping every record.</li>
+        <li>Trained a class-weighted Logistic Regression on a stratified 80/20 split (12.5% high-value) and read the coefficients as odds ratios.</li>
+      </ul>
+      <div class="links"><a href="https://github.com/chisomobodo/high-value-customer-prediction" target="_blank" rel="noopener">github.com/chisomobodo/high-value-customer-prediction</a></div>
+    </div>
+    <div class="panel">
+      <h4>Test set, 40 customers (5 high-value)</h4>
+      <div class="stats">
+        <div class="stat"><strong>1.00</strong><span>Recall, high-value class</span></div>
+        <div class="stat"><strong>0.71</strong><span>Precision, high-value class</span></div>
+        <div class="stat"><strong>0.83</strong><span>F1, high-value class</span></div>
+        <div class="stat"><strong>38 of 40</strong><span>Records classified correctly</span></div>
+      </div>
+      <h4 style="margin-top:22px">Odds ratio per standard deviation</h4>
+      <div class="bar"><span>Spending score</span><span class="track"><span class="fill" style="--w:100%"></span></span><b>25.1</b></div>
+      <div class="bar"><span>Income (log)</span><span class="track"><span class="fill" style="--w:20.8%"></span></span><b>5.2</b></div>
+      <div class="bar"><span>Age</span><span class="track"><span class="fill alt" style="--w:4%"></span></span><b>1.0</b></div>
+      <p class="note">The target is defined from income and spending score, so their dominance is expected, and the test set holds only five high-value customers. Treat these scores as a demonstration of method, not proof of real-world performance.</p>
+    </div>
+  </article>
+
   
 
   <article class="case">
@@ -408,8 +436,6 @@ nav a:hover,nav a.on{background-size:100% 2px;color:var(--accent)}
     </div>
   </article>
 
-  
-
   <article class="case">
     <div>
       <h3>LinkedIn Job Tracker: a reusable agent skill</h3>
@@ -429,6 +455,7 @@ nav a:hover,nav a.on{background-size:100% 2px;color:var(--accent)}
       <p class="note">The comparison measures the tool against running the same task ad hoc, using fixed assertions, so the result can be checked.</p>
     </div>
   </article>
+
 </section>
 
 <section id="experience">
@@ -437,7 +464,7 @@ nav a:hover,nav a.on{background-size:100% 2px;color:var(--accent)}
     <div class="when">07/2024 – 09/2025<br>London, UK</div>
     <div>
       <h3>Data Scientist</h3>
-      <div class="org">Lenkie Technologies Limited, fintech lending</div>
+      <div class="org">Lenkie Technologies Limited, fintech lending · part-time contract</div>
       <ul style="margin:0;padding-left:20px">
         <li style="margin-bottom:8px">Contributed to a credit underwriting engine that increased approval rates by 18% and reduced credit defaults by 3%, enabling over £50 million of funding to UK SMEs.</li>
         <li style="margin-bottom:8px">Built and evaluated machine learning classification models in Python to predict SME loan repayment and default, comparing accuracy, precision, recall and F1-score to choose models for real underwriting decisions.</li>
